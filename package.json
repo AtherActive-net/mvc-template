@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "createRouter": "node ./tools/create_router.js",
     "createController": "node ./tools/create_controller.js",
+    "createModel": "node ./tools/create_model.js",
     "start": "node ./src/app.js"
   },
   "repository": {
