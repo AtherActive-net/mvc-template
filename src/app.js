@@ -4,7 +4,6 @@ import nunjucks from 'nunjucks';
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
-import db from './database.js';
 import SessionManager from './sessionManager.js';
 
 dotenv.config();
@@ -17,12 +16,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Always send userdata to the templating engine.
-// This does NOT mean it is shown, just accecible during templating.
+// This does NOT mean it is shown, just usable during templating.
 app.use((req, res, next) => {
 	res.locals.G_USER = req.session.user;
 	res.locals.query = req.query;
 	next();
 })
+
 nunjucks.configure('./src/templates', {
     autoescape: false,
     express: app,
