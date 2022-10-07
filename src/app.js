@@ -20,6 +20,7 @@ app.use(express.json());
 app.use((req, res, next) => {
 	res.locals.G_USER = req.session.user;
 	res.locals.query = req.query;
+	res.sitename = process.env.SITENAME;
 	next();
 })
 
