@@ -3,6 +3,11 @@ import fs from 'fs';
 const controllerPath = `/src/controllers/`
 
 function createNewController(name) {
+    if(!name) {
+        console.error("Please provide a name for the controller.")
+        return;
+    }
+
     let controllerFileString = `
 import Controller from './base.controller.js';
 // Import the required models here!

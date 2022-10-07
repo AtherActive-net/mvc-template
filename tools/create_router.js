@@ -4,6 +4,12 @@ const routerPath = `/src/routers/`
 
 console.log(process.argv0)
 function createNewRouter(name, mount) {
+    // If params are not given, error out.
+    if(!name || !mount) {
+        console.error("Please provide a name and a mountpoint for the router.")
+        return;
+    }
+
     let routerFileString = `
 import express from 'express';
 

@@ -4,6 +4,10 @@ const modelPath = `/src/models/`
 
 
 function createNewModel(name) {
+    if(!name) {
+        console.error("Please provide a name for the model.")
+        return;
+    }
     const modelString  =`
 import Sequelize from 'sequelize';
 import sequelize from '../database.js'
