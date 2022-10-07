@@ -29,5 +29,8 @@
     "express-session": "^1.17.3",
     "nunjucks": "^3.2.3",
     "sequelize": "^6.21.4"
+  },
+  "devDependencies": {
+    "sass": "^1.55.0"
   }
 }
